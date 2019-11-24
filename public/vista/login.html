@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+    <section>
+        <div id="form">
+            <h1>Inicio de Sesión</h1>
+            <form method="POST" action="../controladores/login.php">
+                <table>
+                    <tr>
+                        <td><label for="usu">Email</label></td>
+                        <td><input type="text" name="usu" placeholder="ingrese su email" required="true"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="con">Contraseña</label></td>
+                        <td><input type="password" name="con" placeholder="ingrese su contraseña" required="true"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><input type="submit" id="login" name="login" value="Iniciar Sesión"><a
+                                href="crear_usuario.html"><input type="button" id="crear" name="crear"
+                                    value="Registrarse"></a></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </section>
+
+</body>
+
+</html>
