@@ -4,96 +4,67 @@
 <head>
     <meta charset="utf-8">
     <title>PHP</title>
-    <script type="text/javascript" src="../controladores/javascript.js"></script>
+    <script type="text/javascript" src="../controladores/script.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
 <body>
-    <header>
-    </header>
-
-    <section>
-        <div class="form">
-            <h1>Registrarse</h1>
-            <form method="POST" action="../controladores/crear_usuario.php" onsubmit="return validar()">
-                <table>
-
-                    <tr>
-                        <td><label>Cedula</label></td>
-                        <td><input type="text" id="cedula" name="cedula" placeholder="ingresa tu cédula"
-                                onfocus="escribe(this)" onkeyup="this.value = val_numero(this.value)"></td>
-                        <td>
-                            <spam id="c" style="display: none;">*error</spam>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Nombre</label></td>
-                        <td>
-                            <input type="text" name="nombre" placeholder="ingresa tu nombre" onfocus="escribe(this)"
-                                onkeyup="this.value = val_letra(this.value)"
-                                onchange="this.value = dos_valores(this.value)">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Apellido</label></td>
-                        <td><input type="text" name="apellido" placeholder="ingresa tu apellido" onfocus="escribe(this)"
-                                onkeyup="this.value = val_letra(this.value)"
-                                onchange="this.value = dos_valores(this.value)"></td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Dirección</label></td>
-                        <td><input type="text" name="direccion" placeholder="ingresa tu dirección" onfocus="escribe(this)">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Teléfono</label></td>
-                        <td><input type="text" name="telefono" placeholder="ingresa tu número telefónico"
-                                onfocus="escribe(this)" onkeyup="this.value = val_numero(this.value)"></td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Fecha de Nacimiento</label></td>
-                        <td><input type="date" id="fecha" name="fec" placeholder="dd/mm/yyyy" onfocus="escribe(this)">
-                        </td>
-                        <td>
-                            <spam id="f" style="display: none;">*error</spam>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Email</label></td>
-                        <td><input type="text" id="ema" name="ema" placeholder="ingresa tu email"
-                                onfocus="escribe(this)"></td>
-                        <td>
-                            <spam id="e" style="display: none;">*error</spam>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><label>Contraseña</label></td>
-                        <td><input type="password" name="con" placeholder="ingrese su contraseña"
-                                onchange="escribe(this)"></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <div class="btn">
-                                <input type="submit" class="crear" name="crear" value="Aceptar">
-                                <a href="login.html"><input type="button" class="cancelar" name="cancelar"
-                                        value="Cancelar"></a>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-            <p id="p" style="display: none;">Error, campos incompletos!</p>
-        </div>
-    </section>
+        <div class="contenedor">
+                <h1>FORMULARIO</h1>
+        
+                <!--Formulario-->
+                <form id="formulario" method="POST" onsubmit="return validar()" action="ingreso.html">
+                    <div class="inf">
+                        <label for="cedula">Cedula:</label>
+                        <input type="text" id="cedula" name="cedula" value="" placeholder="Cedula" oninput="return validarCedula()" onkeypress="return validarNumero(event)" maxlength="10" />
+                        <span id="mensajeCedula" class="error"></span>
+                    </div>
+        
+                    <div class="inf">
+                        <label for="nombre">Nombres:</label>
+                        <input type="text" id="nombre" name="nombre" value="" placeholder="Nombres" minlength="3" onkeypress="return validarTexto(event)" oninput="return validarNombre()" />
+                        <span id="mensajeNombre" class="error"></span>
+                    </div>
+                    <div class="inf">
+                        <label for="apellido">Apellidos:</label>
+                        <input type="text" id="apellido" name="apellido" value="" placeholder="Apellidos" minlength="3" onkeypress="return validarTexto(event)" oninput="return validarApellido()" />
+                        <span id="mensajeApellido" class="error"></span>
+                    </div>
+                    <div class="inf">
+                        <label for="direccion">Direccion:</label>
+                        <input type="text" id="direccion" name="direccion" value="" placeholder="Direccion" onkeypress="return validarTexto(event)"/>
+                        <span id="mensajeDireccion" class="error"></span>
+                    </div>
+                    <div class="inf">
+                        <label for="telefono">Telefono:</label>
+                        <input type="text" id="telefono" name="telefono" value="" placeholder="Telefono" onkeypress="return validarNumero(event)" maxlength="10" />
+                        <span id="mensajeTelefono" class="error"></span>
+                    </div>
+                    <div class="inf">
+                        <label for="fecha">Fecha nacimiento:</label>
+                        <input type="text" id="fecha" name="fecha" value="" placeholder="dd/mm/yyyy" onkeypress="return checkDate(event)" oninput="return validarFecha()" maxlength="10" />
+                        <span id="mensajeFecha" class="error"></span>
+                    </div>
+        
+                    <div class="inf">
+                        <label for="email">Correo Electronico:</label>
+                        <input type="text" id="email" name="email" value="" placeholder="Correo" oninput="return validarCorreo()" />
+                        <span id="mensajeEmail" class="error"></span>
+                    </div>
+                    <div class="inf">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" value="" placeholder="Contraseña" oninput="return validarPassword()" />
+                        <span id="mensajePassword" class="error"></span>
+                    </div>
+        
+                    <!--Botones-->
+                    <div class="botones">
+                        <input class="boton" id="btnConfirm" type="submit" value="Confirmar" >
+                        <input class="boton" id="btnLimpiar" type="submit" value="Limpiar" onclick="limpiar()">
+                    </div>
+                </form>
+            </div>
 </body>
 
 </html>
