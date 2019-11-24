@@ -1,0 +1,43 @@
+.error {
+	border: 1px solid red;
+}
+
+.p {
+	display: block !important;
+	color: #FF9898;
+}
+
+.form {
+	background-color: #DEE1A6;
+	border-radius: 10px;
+	width: 350px;
+	padding: 10px 25px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 70px;
+	color: white;
+}
+
+h1{
+	text-align: center;
+}
+
+td {
+	padding-top: 10px;
+	padding-right: 15px;
+}
+
+.login, .crear, .cancelar {
+	width: 100px;
+	margin: 10px;
+}
+
+.btn {
+	text-align: center;
+}
+
+body {
+	background-image: url('../img/back.jpg');
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
