@@ -2,7 +2,7 @@
 <?php 
     session_start(); 
  
-    include '../../config/conexionDB.php'; 
+    include '../../config/conexionBD.php'; 
  
     $usuario = isset($_POST["correo"]) ? trim($_POST["correo"]) : null; 
     $contrasena = isset($_POST["contrasena"]) ? trim($_POST["contrasena"]) : null; 
@@ -15,16 +15,15 @@
     if ($result->num_rows > 0) {         
         $_SESSION['isLogged'] = TRUE;//sesion iniciada
         $u_codigo=$fila['usu_codigo'];
-        $u_nombre=$fila['usu_nombre'];
+        $u_nombre=$fila['usu_nombres'];
         
-        if($fila['u_rol']=='U'){//ES UN USUARIO
+        if($fila['usu_rol']=='U'){//ES UN USUARIO
             
-            header("Location: ../../admin/vista/user/index.php?usu_codigo=$u_codigo&usu_nombre=$u_nombre");   
-        }else{//ES ADministrador
-            header("Location: ../../admin/vista/admin/index.php?usu_codigo=$u_codigo&usu_nombre=$u_nombre");
+            header("Location: ../../admin/vista/user/index.php?usu_codigo=$u_codigo&usu_nombres=$u_nombre");   
+        }else{//ES ADMINISTRADOR
+            header("Location: ../../admin/vista/admin/index.php?usu_codigo=$u_codigo&usu_nombres=$u_nombre");
         }
         
-       
     } else { //login fallido 
            
         header("Location: ../vista/login.html"); 
