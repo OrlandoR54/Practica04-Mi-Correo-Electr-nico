@@ -14,7 +14,7 @@
                 <h1>FORMULARIO</h1>
         
                 <!--Formulario-->
-                <form id="formulario" method="POST" onsubmit="return validar()" action="ingreso.html">
+                <form id="formulario" method="POST" onsubmit="return validar()" action="../controladores/crear_usuario.php">
                     <div class="inf">
                         <label for="cedula">Cedula:</label>
                         <input type="text" id="cedula" name="cedula" value="" placeholder="Cedula" oninput="return validarCedula()" onkeypress="return validarNumero(event)" maxlength="10" />
