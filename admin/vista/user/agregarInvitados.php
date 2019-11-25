@@ -27,7 +27,7 @@
             <th>Invitar</th>              
         </tr> 
         <?php 
-            include '../../../config/conexionDB.php';  
+            include '../../../config/conexionBD.php';  
             $sql = "SELECT * FROM reunion"; 
             $result = $conn->query($sql); 
              
