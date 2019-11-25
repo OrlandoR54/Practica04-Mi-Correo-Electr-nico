@@ -18,16 +18,19 @@
         $fechaNacimiento = isset($_POST["fecha"]) ? trim($_POST["fecha"]):null;
         $contrasena = isset($_POST["password"]) ? trim($_POST["password"]):null;
 
-        $sql = "INSERT INTO usuario VALUES (0, '$cedula','$nombre','$apellido','$direccion','$telefono','$correo', MD5('$contrasena'),'$fechaNacimiento','N',null,null)";
+        $sql = "INSERT INTO usuario VALUES (0, '$cedula','$nombre','$apellido','$direccion','$telefono','$correo', MD5('$contrasena'),'$fechaNacimiento','N',null,null,'U')";
 
         if ($conn->query($sql)===TRUE) {
             echo "<p>Se ha creado los datos personales correctamente</p>";
+            header( "Location: ../vista/login.html");
         }else {
             if ($conn->errno == 1062) {
                 echo "<p class='error'>La persona con la cedula $cedula ya esta en el sistema</p>";
+                
 
             }else {
                 echo "<p class='error'>Error.".mysqli_error($conn)."</p>";
+                echo "<a href='../vista/registrarse.html'>Volver a Registro</a>";
             }
         }
         //Cerrar la base de datos
