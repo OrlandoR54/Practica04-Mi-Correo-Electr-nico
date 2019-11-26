@@ -9,7 +9,7 @@
  
     $sql = "SELECT * FROM usuario WHERE usu_correo = '$usuario' and usu_password = 
     MD5('$contrasena')"; 
- //'$contrasena'"; 
+
     $result = $conn->query($sql);
     $fila=$result->fetch_assoc();//obteniendo los resultados de la consulta     
     if ($result->num_rows > 0) {         
@@ -17,7 +17,7 @@
         $u_codigo=$fila['usu_codigo'];
         $u_nombre=$fila['usu_nombres'];
         
-        if($fila['usu_rol']=='U'){//ES UN USUARIO
+        if($fila['usu_rol']=='user'){//ES UN USUARIO
             
             header("Location: ../../admin/vista/user/index.php?usu_codigo=$u_codigo&usu_nombres=$u_nombre");   
         }else{//ES ADMINISTRADOR
