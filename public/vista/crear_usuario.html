@@ -10,61 +10,69 @@
 </head>
 
 <body>
-        <div class="contenedor">
-                <h1>FORMULARIO</h1>
-        
-                <!--Formulario-->
-                <form id="formulario" method="POST" onsubmit="return validar()" action="../controladores/crear_usuario.php">
-                    <div class="inf">
-                        <label for="cedula">Cedula:</label>
-                        <input type="text" id="cedula" name="cedula" value="" placeholder="Cedula" oninput="return validarCedula()" onkeypress="return validarNumero(event)" maxlength="10" />
-                        <span id="mensajeCedula" class="error"></span>
-                    </div>
-        
-                    <div class="inf">
-                        <label for="nombre">Nombres:</label>
-                        <input type="text" id="nombre" name="nombre" value="" placeholder="Nombres" minlength="3" onkeypress="return validarTexto(event)" oninput="return validarNombre()" />
-                        <span id="mensajeNombre" class="error"></span>
-                    </div>
-                    <div class="inf">
-                        <label for="apellido">Apellidos:</label>
-                        <input type="text" id="apellido" name="apellido" value="" placeholder="Apellidos" minlength="3" onkeypress="return validarTexto(event)" oninput="return validarApellido()" />
-                        <span id="mensajeApellido" class="error"></span>
-                    </div>
-                    <div class="inf">
-                        <label for="direccion">Direccion:</label>
-                        <input type="text" id="direccion" name="direccion" value="" placeholder="Direccion" onkeypress="return validarTexto(event)"/>
-                        <span id="mensajeDireccion" class="error"></span>
-                    </div>
-                    <div class="inf">
-                        <label for="telefono">Telefono:</label>
-                        <input type="text" id="telefono" name="telefono" value="" placeholder="Telefono" onkeypress="return validarNumero(event)" maxlength="10" />
-                        <span id="mensajeTelefono" class="error"></span>
-                    </div>
-                    <div class="inf">
-                        <label for="fecha">Fecha nacimiento:</label>
-                        <input type="date" id="fecha" name="fecha" value="" onkeypress="return checkDate(event)" maxlength="10" />
-                        <span id="mensajeFecha" class="error"></span>
-                    </div>
-        
-                    <div class="inf">
-                        <label for="email">Correo Electronico:</label>
-                        <input type="text" id="email" name="email" value="" placeholder="Correo" oninput="return validarCorreo()" />
-                        <span id="mensajeEmail" class="error"></span>
-                    </div>
-                    <div class="inf">
-                        <label for="password">Contraseña:</label>
-                        <input type="password" id="password" name="password" value="" placeholder="Contraseña" oninput="return validarPassword()" />
-                        <span id="mensajePassword" class="error"></span>
-                    </div>
-        
-                    <!--Botones-->
-                    <div class="botones">
-                        <input class="boton" id="btnConfirm" type="submit" value="Confirmar" >
-                        <input class="boton" id="btnLimpiar" type="submit" value="Limpiar" onclick="limpiar()">
-                    </div>
-                </form>
+    <div class="contenedor">
+        <h1>FORMULARIO</h1>
+
+        <!--Formulario-->
+        <form id="formulario" method="POST" onsubmit="return validar()" action="../controladores/crear_usuario.php">
+            <div class="inf">
+                <label for="cedula">Cedula:</label>
+                <input type="text" id="cedula" name="cedula" value="" placeholder="Cedula"
+                    oninput="return validarCedula()" onkeypress="return validarNumero(event)" maxlength="10" />
+                <span id="mensajeCedula" class="error"></span>
             </div>
+
+            <div class="inf">
+                <label for="nombre">Nombres:</label>
+                <input type="text" id="nombre" name="nombre" value="" placeholder="Nombres" minlength="3"
+                    onkeypress="return validarTexto(event)" oninput="return validarNombre()" />
+                <span id="mensajeNombre" class="error"></span>
+            </div>
+            <div class="inf">
+                <label for="apellido">Apellidos:</label>
+                <input type="text" id="apellido" name="apellido" value="" placeholder="Apellidos" minlength="3"
+                    onkeypress="return validarTexto(event)" oninput="return validarApellido()" />
+                <span id="mensajeApellido" class="error"></span>
+            </div>
+            <div class="inf">
+                <label for="direccion">Direccion:</label>
+                <input type="text" id="direccion" name="direccion" value="" placeholder="Direccion"
+                    onkeypress="return validarTexto(event)" />
+                <span id="mensajeDireccion" class="error"></span>
+            </div>
+            <div class="inf">
+                <label for="telefono">Telefono:</label>
+                <input type="text" id="telefono" name="telefono" value="" placeholder="Telefono"
+                    onkeypress="return validarNumero(event)" maxlength="10" />
+                <span id="mensajeTelefono" class="error"></span>
+            </div>
+            <div class="inf">
+                <label for="fecha">Fecha nacimiento:</label>
+                <input type="date" id="fecha" name="fecha" value="" onkeypress="return checkDate(event)"
+                    maxlength="10" />
+                <span id="mensajeFecha" class="error"></span>
+            </div>
+
+            <div class="inf">
+                <label for="email">Correo Electronico:</label>
+                <input type="text" id="email" name="email" value="" placeholder="Correo"
+                    oninput="return validarCorreo()" />
+                <span id="mensajeEmail" class="error"></span>
+            </div>
+            <div class="inf">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" value="" placeholder="Contraseña"
+                    oninput="return validarPassword()" />
+                <span id="mensajePassword" class="error"></span>
+            </div>
+
+            <!--Botones-->
+            <div class="botones">
+                <input class="boton" id="btnConfirm" type="submit" value="Confirmar">
+                <input class="boton" id="btnLimpiar" type="submit" value="Limpiar" onclick="limpiar()">
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
