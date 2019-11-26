@@ -9,24 +9,23 @@
 <head> 
     <meta charset="UTF-8"> 
     <title>Usuario</title>
-    <link rel="stylesheet" href=""> 
+    <link rel="stylesheet" href="css/style.css"> 
 </head> 
 <body> 
-    
-<?php 
-$codigo=$_GET["usu_codigo"];
-$nombre=$_GET["usu_nombres"];
-//echo"<p>".$codigo."</p>";
- echo "<h1>Usuario: ".$nombre."</h1>";
- //envio a cada pagina su respectivo id de usuario para realizar los cambios pertinentes
- echo "<h2><a href='crearReunion.php?usu_codigo=".$codigo."&usu_nombres=".$nombre."'>Crear Reuniones</a></h2>";
- echo "<h2><a href='buscarReuniones.php?usu_codigo=".$codigo."&usu_nombres=".$nombre."'>Buscar Reuniones</a></h2>";
- echo "<h2><a href='modificar_user2.php?usu_codigo=".$codigo."&usu_nombres=".$nombre."'>Modificar datos</a></h2>";
- echo "<h2><a href='cambiar_contra_usuario.php?usu_codigo=".$codigo."&usu_nombres=".$nombre."'>Cambiar contraseña</a></h2>";
- echo "<h2><a href='../../controladores/cerrarSesion.php'>Cerrar Sesion</a></h2>";
- 
- ?>
- 
+<header>
+    <?php 
+    $codigo=$_GET["usu_codigo"];
+    $nombre=$_GET["usu_nombres"];
+    //echo"<p>".$codigo."</p>";
+    echo "<h1>Usuario: ".$nombre."</h1>";
+    //envio a cada pagina su respectivo id de usuario para realizar los cambios pertinentes
+    echo "<h2><a href='crearReunion.php?usu_codigo=".$codigo."&usu_nombres=".$nombre."'>Crear Reuniones</a></h2>";
+    echo "<h2><a href='buscarReuniones.php?usu_codigo=".$codigo."&usu_nombres=".$nombre."'>Buscar Reuniones</a></h2>";
+    echo "<h2><a href='modificarMine.php?usu_codigo=".$codigo."&usu_nombres=".$nombre."'>Modificar datos</a></h2>";
+    echo "<h2><a href='cambiarContra.php?usu_codigo=".$codigo."&usu_nombres=".$nombre."'>Cambiar contraseña</a></h2>";
+    echo "<h2><a href='../../controladores/cerrarSesion.php'>Cerrar Sesion</a></h2>";
+    ?>
+ </header>
  <table style="width:100%" class="tabla"> 
         <tr> 
             
@@ -40,7 +39,7 @@ $nombre=$_GET["usu_nombres"];
         <?php 
             include '../../../config/conexionBD.php';  
             //En la pagina del usuario logeado se visualizara sus respectivas reunines agendadas
-            $sql = "SELECT * FROM reunion WHERE reu_eliminada='N' AND reu_remitente='$codigo' ORDER BY reu_codigo DESC"; 
+            $sql = "SELECT * FROM reunion WHERE reu_eliminado='N' AND reu_remitente='$codigo' ORDER BY reu_codigo DESC"; 
             $result = $conn->query($sql); 
              
             if ($result->num_rows > 0) { 
