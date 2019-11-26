@@ -1,0 +1,90 @@
+@charset "utf8";
+
+* {
+    padding: 0px;
+	margin: 0px;
+	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+    background-color: rgb(199, 195, 188);
+}
+
+h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+form {
+    /* Sólo para centrar el formulario a la página */
+    margin: 0 auto;
+    width: 400px;
+    /* Para ver el borde del formulario */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+
+form div + div {
+    margin-top: 1em;
+}
+
+label {
+    /* Para asegurarse que todos los labels tienen el mismo tamaño y están alineados correctamente */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+
+
+
+
+.button {
+    /* Para posicionar los botones a la misma posición que los campos de texto */
+    padding-left: 90px; /* mismo tamaño a todos los elementos label */
+}
+input {
+    /* Este margen extra representa aproximadamente el mismo espacio que el espacio
+       entre los labels y sus campos de texto */
+    margin-left: .5em;
+}
+
+
+.error {
+    
+    font-size: 10px;
+}
+
+
+
+.imagen{
+text-align: center;
+}
+
+
+.botones{
+text-align: center;
+
+padding-top: 15px;
+}
+
+.tabla{
+    border: 1px solid;
+    width: 100%;
+    border-collapse: collapse;
+}
+.tabla td{
+    border: 1px solid;
+    text-align: center;
+}
+
+.tabla th{
+    border: 1px solid;
+    text-align: center;
+}
+
+a:visited {
+    color: green;
+  }
