@@ -18,7 +18,7 @@
         $fechaNacimiento = isset($_POST["fecha"]) ? trim($_POST["fecha"]):null;
         $contrasena = isset($_POST["password"]) ? trim($_POST["password"]):null;
 
-        $sql = "INSERT INTO usuario VALUES (0, '$cedula','$nombre','$apellido','$direccion','$telefono','$correo', MD5('$contrasena'),'$fechaNacimiento','N',null,null,'U')";
+        $sql = "INSERT INTO usuario VALUES (0, '$cedula','$nombre','$apellido','$direccion','$telefono','$correo', MD5('$contrasena'),'$fechaNacimiento','N',null,null,'user')";
 
         if ($conn->query($sql)===TRUE) {
             echo "<p>Se ha creado los datos personales correctamente</p>";
