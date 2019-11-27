@@ -4,32 +4,26 @@
  
     include '../../config/conexionBD.php'; 
  
-    $usuario = isset($_POST["correo"]) ? trim($_POST["correo"]) : null; 
-    $contrasena = isset($_POST["contrasena"]) ? trim($_POST["contrasena"]) : null; 
- 
-    $sql = "SELECT * FROM usuario WHERE usu_correo = '$usuario' and usu_password = 
-    MD5('$contrasena')"; 
-
+    $usuario = isset($_POST["correo"]) ? trim($_POST["correo"]) : null;
+    $contrasena = isset($_POST["contrasena"]) ? trim($_POST["contrasena"]) : null;
+    $sql = "SELECT * FROM usuario WHERE usu_correo = '$usuario' and usu_password = MD5('$contrasena')";
     $result = $conn->query($sql);
-    $fila=$result->fetch_assoc();//obteniendo los resultados de la consulta     
-    if ($result->num_rows > 0) {         
-        $_SESSION['isLogged'] = TRUE;//sesion iniciada
-        $u_codigo=$fila['usu_codigo'];
-        $u_nombre=$fila['usu_nombres'];
-        
-        if($fila['usu_rol']=='user'){//ES UN USUARIO
-            
-            header("Location: ../../admin/vista/user/index.php?usu_codigo=$u_codigo&usu_nombres=$u_nombre");   
-        }else{//ES ADMINISTRADOR
-            header("Location: ../../admin/vista/admin/index.php?usu_codigo=$u_codigo&usu_nombres=$u_nombre");
+    //Una vez verificado el correo y contrasena se inica una sesion y dependiendo del rol del usuario se envia a su index.html correspondiente
+    if ($result->num_rows > 0 ){
+        $_SESSION['isLogged']=TRUE;
+        while($row = $result->fetch_assoc()){
+            $codigo = $row["usu_codigo"];
+            if ($row["rol_usu_codigo"]==1){
+                header("Location: ../../admin/vista/admin/index.php?codigo_admin=".$row['usu_codigo']);
+            }else{
+                header("Location: ../../admin/vista/user/index.php?codigo=".$row['usu_codigo']);
+            }
         }
-        
-    } else { //login fallido 
-           
-        header("Location: ../vista/login.html"); 
-        //echo"<p> USUARIO " .$sql. " </p>"; 
-    } 
-         
-    $conn->close(); 
+    }else{
+        header("Location: ../vista/login.html");
+    }
+    $conn->close();
  
 ?> 
+
+
