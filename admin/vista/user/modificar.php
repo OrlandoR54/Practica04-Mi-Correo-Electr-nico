@@ -54,7 +54,7 @@
                 <br>
 
                 <input type="submit" id="modificar" name="modificar" value="Modificar" class="boton">
-                <input type="button" id="cancelar" name="cancelar" value="Cancelar" onclick="location.href='micuenta.php?codigo=<?php echo $codigo ?>'" class="boton">
+                <input type="button" id="cancelar" name="cancelar" value="Cancelar" onclick="location.href='index.php?codigo=<?php echo $codigo ?>'" class="boton">
             </form>
     <?php
         }
