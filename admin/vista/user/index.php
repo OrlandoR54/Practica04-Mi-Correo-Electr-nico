@@ -15,14 +15,13 @@
 <header>
     <?php 
     $codigo=$_GET["codigo"];
-
     //echo"<p>".$codigo."</p>";
-    echo "<h1>Usuario: ".$nombre."</h1>";
+    //echo "<h1>Usuario: ".$nombre."</h1>";
     //envio a cada pagina su respectivo id de usuario para realizar los cambios pertinentes
-    echo "<h2><a href='crearReunion.php?usu_codigo=".$codigo."&usu_nombres=".$nombre."'>Crear Reuniones</a></h2>";
-    echo "<h2><a href='buscarReuniones.php?usu_codigo=".$codigo."&usu_nombres=".$nombre."'>Buscar Reuniones</a></h2>";
-    echo "<h2><a href='modificar.php?usu_codigo=".$codigo."&usu_nombres=".$nombre."'>Modificar datos</a></h2>";
-    echo "<h2><a href='cambiarContra.php?usu_codigo=".$codigo."&usu_nombres=".$nombre."'>Cambiar contraseña</a></h2>";
+    echo "<h2><a href='crearReunion.php?usu_codigo=".$codigo."'>Crear Reuniones</a></h2>";
+    echo "<h2><a href='buscarReuniones.php?usu_codigo=".$codigo."'>Buscar Reuniones</a></h2>";
+    echo "<h2><a href='modificar.php?usu_codigo=".$codigo."'>Modificar datos</a></h2>";
+    echo "<h2><a href='cambiarContra.php?usu_codigo=".$codigo."'>Cambiar contraseña</a></h2>";
     echo "<h2><a href='../../controladores/cerrarSesion.php'>Cerrar Sesion</a></h2>";
     ?>
  </header>
