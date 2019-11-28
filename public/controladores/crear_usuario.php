@@ -30,9 +30,7 @@
             }
         }
         $conn->close();
-        echo "  <div class="botones">
-                    <input calss="boton" type="submit" value="Iniciar Sesion" onclick="history.back()">
-                </div>";
+        echo "<a href='../vista/crear_usuario.html'>Regresar</a>";
         ?>
     </form>
 </body>
