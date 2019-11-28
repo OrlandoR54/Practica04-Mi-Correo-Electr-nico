@@ -10,12 +10,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Modificar datos de persona</title>
-    <link rel="stylesheet" rel="stylesheet" href="../../../index.css">
+    <link rel="stylesheet" rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <?php
-    $codigo = $_GET["codigo"];
+    $codigo = $_GET["usu_codigo"];
     $sql = "SELECT * FROM usuario where usu_codigo=$codigo";
     include '../../../config/conexionBD.php';
     $result = $conn->query($sql);
