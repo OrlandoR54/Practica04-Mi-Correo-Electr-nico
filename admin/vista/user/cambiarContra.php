@@ -16,38 +16,26 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
 
 <body>
 <h1>Modificar Contraseña</h1>
-<?php 
-$u_codigo=$_GET["usu_codigo"];
-$u_nombre=$_GET["usu_nombres"];
-//echo"<p>".$u_codigo ."</p>";
-echo "<h2><a href='index.php?u_codigo=".$u_codigo."&u_nombre=".$u_nombre."'>Regresar</a></h2>";
+
+<?php
+    $codigo = $_GET["codigo"];
 ?>
     
+    <form  method="POST" action="../../controladores/user/cambiarContra.php">
 
-    
-<form  method="POST" action="../../controladores/user/cambiarContra.php?usu_codigo=<?php $u_codigo=$_GET["usu_codigo"]; echo($u_codigo)?>&usu_nombre=<?php $u_nombre=$_GET["u_nombre"]; echo($u_nombre)?>">
+        <input type="hidden" id="codigo" name="codigo" value="<?php echo $codigo ?>">
 
+        <label class="contrasena" for="contrasenaActual">Contrasena Actual (*)</label>
+        <input type="password" id="contrasena1" name="contrasena1" value="" required placeholder="Ingrese contrerior">
+        <br>
 
-        <div>
-            <label for="nombre">Nueva Contraseña:</label>
-            <input type="password" id="new_contra" name="new_contra" />
-            <span id="aviso" ></span>            
-        </div>
+        <label class="contrasena" for="contrasenaNueva">Contrasena Nueva (*)</label>
+        <input type="password" id="contrasena2" name="contrasena2" value="" required placeholder="Ingrese nueva contrasena">
+        <br>
 
-<!--
-        <div> <label for="ape">Repetir Contraseña:</label>
-            <input type="password" id="r_new_contra" name="r_new_contra" onkeyup="return validarPass(this)" />
-            <span id="aviso2" ></span>
-        </div>
-      
--->
-
-        <div>
-            <input type="submit" id="modificar" name="modificar" value="Modificar" /> 
-        </div>
-
+        <input type="submit" id="modificar" name="modificar" value="Modificar" class="boton">
+        <input type="button" id="cancelar" name="cancelar" value="Cancelar" onclick="location.href='micuenta.php?codigo=<?php echo $codigo ?>'" class="boton">
     </form>
-
 </body>
 
 </html>
